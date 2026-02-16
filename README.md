@@ -13,4 +13,13 @@ In this lab, I practiced core Kubernetes operational tasks using an Nginx applic
  # Files in This Repository
  commands.txt  kubectl commands
  # Commands Used
- See the file commands.txt
+ ```bash
+ # Create deployment
+  kubectl create deployment nginx --image=nginx:1.14.1 
+# Expose deployment 
+  kubectl expose deployment nginx --port=80 --target-port=80 --type="NodePort"
+# Set image deployment 
+  kubectl set image deployment/nginx nginx=nginx=1.16.1 
+# Rollback to the previous image 
+  kubectl rollout undo deployment/nginx
+```
